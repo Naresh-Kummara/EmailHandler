@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Send Email" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                   Please review Email
+                </h2>
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input label = "To address" type="email" onchange={handleChange} placeholder="type here..." name="toEmailAddress" required></lightning-input>
+                </div>
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input label = "From address" type="email" onchange={handleChange} placeholder="type here..." name="fromEmailAddress" value="nareshkummara782@gmail.com" required></lightning-input>
+                </div>
+                <div class="slds-p-around_medium lgc-bg">
+                   <lightning-textarea  onchange={handleChange} label="Body"  name="body" value={body} clean =false required> </lightning-textarea >
+                </div>
+                <div class="slds-p-around_medium lgc-bg">
+                    <div innerhtml={formattedBody}></div>
+                </div>
+                
+            </div>
+            <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">Send Email</button>
+        </div>
+    </lightning-card>
+    
+</template>
